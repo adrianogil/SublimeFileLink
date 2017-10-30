@@ -1,0 +1,5 @@
+[
+    {   "caption": "FileLink: Create file link",
+        "command": "file_link"
+    }
+]
