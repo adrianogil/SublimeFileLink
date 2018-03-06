@@ -18,7 +18,9 @@ class FileLinkCommand(sublime_plugin.TextCommand):
 
         create_link_cmd = '${HOME}/workspace/scripts/sublime/create_file_link.sh "' + current_file + '" ' + str(line)
         print(create_link_cmd)
-        link_path=subprocess.check_output(create_link_cmd, shell=True)
+        link_path = subprocess.check_output(create_link_cmd, shell=True)
+        link_path = link_path.strip()
+        link_path = "file://" + link_path
 
         print(link_path)
 
