@@ -20,10 +20,10 @@ class FileLinkCommand(sublime_plugin.TextCommand):
         print(create_link_cmd)
         link_path = subprocess.check_output(create_link_cmd, shell=True)
         link_path = link_path.strip()
-        link_path = "file://" + link_path
+        link_path = "file://" + link_path.decode('UTF-8')
 
         print(link_path)
 
-        sublime.set_clipboard(link_path.decode('UTF-8'))
+        sublime.set_clipboard(link_path)
 
 
